@@ -15,3 +15,31 @@ const keyMessage = document.getElementById('keyMessage');
 keyboardInput.addEventListener('keyup', (event) => {
     keyMessage.textContent = `Last key pressed: ${event.key}`;
 });
+
+const myForm = document.getElementById('myForm');
+const formMessage = document.getElementById('formMessage');
+
+myForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    formMessage.textContent = "Mission Successful";
+});
+
+const focusBlurInput = document.getElementById('focusBlurInput');
+const focusBlurMessage = document.getElementById('focusBlurMessage');
+
+focusBlurInput.addEventListener('focus', () => {
+    focusBlurMessage.textContent = "You are locked in";
+});
+
+focusBlurInput.addEventListener('blur', () => {
+    focusBlurMessage.textContent = "Don't lose focus of the goal now silly";
+});
+
+const container = document.querySelector('.container');
+const delegationMessage = document.getElementById('delegationMessage');
+
+container.addEventListener('click', (event) => {
+    if (event.target.tagName === 'BUTTON') {
+        delegationMessage.textContent = `You have chosen: ${event.target.textContent}`;
+    }
+});
